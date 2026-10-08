@@ -1,17 +1,10 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { ChevronLeft, ChevronRight, Play, Search, X, Maximize2 } from "lucide-react"
+import { Search, X, Maximize2 } from "lucide-react"
 import channelsData from "@/data/db.json"
 
 type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string }
-
-const games = [
-  ["Xangai - Primeira jornada", "03:00", "Luca Van Assche", "Bu Yunchaokete"],
-  ["Xangai - Primeira jornada", "04:10", "Cameron Norrie", "Dalibor Svrcina"],
-  ["Euroliga", "09:00", "BC Dubai", "Crvena Zvezda"],
-  ["Euroliga", "11:45", "Real Madrid", "KK Partizan"],
-]
 
 export default function Home() {
   const channels = (channelsData as Channel[]).map((channel, index) => ({
@@ -22,11 +15,9 @@ export default function Home() {
   }))
   const [query, setQuery] = useState("")
   const [selected, setSelected] = useState<Channel | null>(null)
-  const [gameOffset, setGameOffset] = useState(0)
   const filtered = useMemo(() => channels.filter((channel) =>
     String(channel.nome).toLowerCase().includes(query.toLowerCase())
   ), [channels, query])
-  const visibleGames = games.slice(gameOffset, gameOffset + 4)
 
   return (
     <main className="tv-page">
@@ -36,23 +27,6 @@ export default function Home() {
             <span>TV ONLINE</span><b>HD</b>
           </a>
         </header>
-
-        <section className="games-section" aria-labelledby="games-title">
-          <div className="simple-heading"><h2 id="games-title">JOGOS AO VIVO</h2></div>
-          <div className="games-wrap">
-            <button className="round-arrow left" onClick={() => setGameOffset(Math.max(0, gameOffset - 1))} aria-label="Jogos anteriores"><ChevronLeft size={20} /></button>
-            <div className="games-grid">
-              {visibleGames.map(([league, time, home, away]) => (
-                <article className="live-game" key={`${home}-${away}`}>
-                  <div className="game-line"><span>{league}</span><strong>Hoje · {time}</strong></div>
-                  <div className="matchup"><div><i>{home.slice(0, 1)}</i><b>{home}</b></div><small>VS</small><div><i className="away">{away.slice(0, 1)}</i><b>{away}</b></div></div>
-                  <button className="watch-button"><Play size={13} fill="currentColor" /> ASSISTIR</button>
-                </article>
-              ))}
-            </div>
-            <button className="round-arrow right" onClick={() => setGameOffset(Math.min(0, gameOffset + 1))} aria-label="Próximos jogos"><ChevronRight size={20} /></button>
-          </div>
-        </section>
 
         <section id="canais" className="channels-section" aria-labelledby="channels-title">
           <div className="channels-heading"><h2 id="channels-title">CANAIS DISPONÍVEIS</h2><label className="search-box"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar canal" aria-label="Buscar canal" /></label></div>
