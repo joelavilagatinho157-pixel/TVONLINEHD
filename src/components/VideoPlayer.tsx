@@ -1,4 +1,4 @@
-import { X, ArrowLeft, Info, Calendar, Play, Tv, Maximize, Volume2, Pause, SkipForward, FolderPlus, Check } from 'lucide-react';
+import { X, ArrowLeft, Info, Calendar, Play, Tv, Maximize, Volume2, Pause, SkipForward, FolderPlus, Check, ChevronUp, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { Channel } from '../constants';
@@ -9,6 +9,8 @@ interface VideoPlayerProps {
   onClose: () => void;
   user: User | null;
   onUpdateUser: (updatedUser: User) => void;
+  onPreviousChannel: () => void;
+  onNextChannel: () => void;
 }
 
 export default function VideoPlayer({ channel, onClose, user, onUpdateUser }: VideoPlayerProps) {
@@ -234,6 +236,18 @@ export default function VideoPlayer({ channel, onClose, user, onUpdateUser }: Vi
                       setTimeout(() => setIsLoading(false), 500);
                     }}
                   />
+
+                  <div className="absolute right-4 top-1/2 z-30 flex -translate-y-1/2 flex-col gap-2 rounded-2xl border border-white/10 bg-slate-950/75 p-2 shadow-2xl backdrop-blur-md">
+                    <button onClick={onPreviousChannel} aria-label="Canal anterior" className="rounded-xl p-3 text-white transition-colors hover:bg-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400">
+                      <ChevronUp className="h-5 w-5" />
+                    </button>
+                    <button onClick={onNextChannel} aria-label="Próximo canal" className="rounded-xl p-3 text-white transition-colors hover:bg-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400">
+                      <ChevronDown className="h-5 w-5" />
+                    </button>
+                  </div>
+                  <button onClick={handleFullscreen} aria-label="Tela cheia" className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-slate-950/75 p-4 text-white shadow-2xl backdrop-blur-md transition-all hover:scale-110 hover:bg-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400">
+                    <Maximize className="h-5 w-5" />
+                  </button>
 
                   {/* Custom Controls Overlay (Visual Only for Embeds) */}
                   <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">

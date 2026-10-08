@@ -323,12 +323,22 @@ export default function App() {
         </button>
       </div>
 
-      <VideoPlayer 
-        channel={selectedChannel} 
-        onClose={() => setSelectedChannel(null)} 
-        user={user}
-        onUpdateUser={setUser}
-      />
+  <VideoPlayer
+  channel={selectedChannel}
+  onClose={() => setSelectedChannel(null)}
+  user={user}
+  onUpdateUser={setUser}
+  onPreviousChannel={() => {
+    if (!selectedChannel || channels.length === 0) return;
+    const index = channels.findIndex((item) => item.id === selectedChannel.id);
+    setSelectedChannel(channels[(index - 1 + channels.length) % channels.length]);
+  }}
+  onNextChannel={() => {
+    if (!selectedChannel || channels.length === 0) return;
+    const index = channels.findIndex((item) => item.id === selectedChannel.id);
+    setSelectedChannel(channels[(index + 1) % channels.length]);
+  }}
+  />
 
       <AuthModal 
         isOpen={isAuthOpen}
