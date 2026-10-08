@@ -22,15 +22,16 @@ export default function Home() {
     playerRef.current?.focus()
 
     const handleRemoteKey = (event: KeyboardEvent) => {
-      if (["ArrowUp", "ChannelUp", "MediaTrackNext"].includes(event.key)) {
+      if (event.key === "ArrowUp" || event.key === "ChannelUp" || event.key === "PageUp" || event.key === "MediaTrackNext") {
         event.preventDefault()
         const nextIndex = (selectedIndex - 1 + channels.length) % channels.length
         setSelected(channels[nextIndex])
-      } else if (["ArrowDown", "ChannelDown", "MediaTrackPrevious"].includes(event.key)) {
+      } else if (event.key === "ArrowDown" || event.key === "ChannelDown" || event.key === "PageDown" || event.key === "MediaTrackPrevious") {
         event.preventDefault()
         const nextIndex = (selectedIndex + 1) % channels.length
         setSelected(channels[nextIndex])
-      } else if (event.key === "Escape") {
+      } else if (event.key === "Escape" || event.key === "Backspace") {
+        event.preventDefault()
         setSelected(null)
       }
     }
