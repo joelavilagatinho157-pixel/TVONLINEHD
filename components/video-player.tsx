@@ -43,7 +43,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
 
     const loadEpg = async () => {
       try {
-        const response = await fetch(EPG_URL, { cache: "no-store" })
+        const response = await fetch(EPG_URL, { cache: "force-cache" })
         if (!response.ok) return
         const payload = (await response.json()) as EpgResponse
         const key = channel.nome.toLowerCase().replace(/[^a-z0-9]+/g, "")
@@ -58,8 +58,9 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
       }
     }
 
-    void loadEpg()
+    const epgTimer = window.setTimeout(() => void loadEpg(), 350)
     return () => {
+      window.clearTimeout(epgTimer)
       if (hideTimer) window.clearTimeout(hideTimer)
     }
   }, [channel])
@@ -87,7 +88,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
 
   return (
     <div className="player-shell fixed inset-0 z-50 flex flex-col bg-black">
-      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent px-4 py-4">
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/75 via-black/35 to-transparent px-3 py-3 sm:px-5 sm:py-4">
         <div className="flex items-center gap-3">
           <img src={channel.img} alt="" className="h-9 w-9 rounded-md object-contain" />
           <div><h2 className="text-sm font-semibold text-white">{channel.nome}</h2><span className="text-[11px] text-white/60">AO VIVO</span></div>
