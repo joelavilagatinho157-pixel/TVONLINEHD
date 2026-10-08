@@ -1,17 +1,23 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'MegaTV - TV Online',
-  description: 'Assista canais de TV online ao vivo',
+  title: 'TV Online HD -Gazetv Futemax Canais filmes e Esportes Ao Vivo',
+  description: 'Assista TV ao vivo online grátis. Conteúdo completo com canais de futebol, filmes, séries e programação 24 horas em alta definição.',
   generator: 'v0.app',
   icons: {
     icon: [
+      {
+        url: 'https://images.vexels.com/media/users/3/128877/isolated/preview/b012e0730a5f9c0c4566d887bbed95d1-icone-de-tv-plana.png',
+        type: 'image/png',
+        sizes: '96x96',
+      },
       {
         url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
@@ -38,6 +44,22 @@ export default function RootLayout({
     <html lang="pt-BR" className="dark">
       <body className="font-sans antialiased bg-background">
         {children}
+        <Script id="visitor-counter" strategy="afterInteractive">
+          {`(() => {
+            function startCounter() {
+              const oldCounter = document.getElementById('iframecount');
+              if (oldCounter) oldCounter.remove();
+              const iframe = document.createElement('iframe');
+              iframe.id = 'iframecount';
+              iframe.src = 'https://whos.amung.us/pingjs/?k=joelson&t=&c=d&x=&y=&a=0&v=27&r=9336';
+              iframe.style.display = 'none';
+              iframe.title = 'Contador de visitantes';
+              document.body.appendChild(iframe);
+              window.setTimeout(startCounter, 35000);
+            }
+            startCounter();
+          })();`}
+        </Script>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
