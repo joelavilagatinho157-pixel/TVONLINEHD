@@ -4,105 +4,1331 @@
     "subtitle": "Os melhores canais ao vivo em um só lugar"
   },
   "categories": [
-    "Todos",
-    "Futebol Ao vivo",
-    "Rádios Online",
-    "Favoritos",
-    "Recentes",
-    "BBB 2026",
-    "TV Aberta",
-    "Esportes",
-    "Filmes e Séries"
+    "Todos"
   ],
   "channels": [
     {
-      "id": "bbb-mosaico",
-      "title": "BBB - Mosaico",
-      "subtitle": "Ao Vivo - Multicâmeras",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "a-fazenda-1-0",
+      "title": "A FAZENDA 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/afazenda.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "description": "Acompanhe tudo o que acontece na casa mais vigiada do Brasil em tempo real com o mosaico multicâmeras. Não perca nenhum detalhe das conversas, festas e provas.",
-      "epg": [
-        { "time": "14:00", "title": "Câmera 1 - Sala" },
-        { "time": "16:00", "title": "Câmera 2 - Cozinha" },
-        { "time": "18:00", "title": "Câmera 3 - Quarto" },
-        { "time": "20:00", "title": "Câmera 4 - Piscina" },
-        { "time": "22:00", "title": "Edição ao Vivo" }
-      ]
+      "url": "https://sinalpublicoetv.vercel.app/?id=afazenda"
     },
     {
-      "id": "bbb-1",
-      "title": "BBB - 1",
-      "subtitle": "Sala de Estar",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "a-fazenda-2-1",
+      "title": "A FAZENDA 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/afazenda.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=afazenda2"
     },
     {
-      "id": "bbb-2",
-      "title": "BBB - 2",
-      "subtitle": "Cozinha VIP",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "a-fazenda-3-2",
+      "title": "A FAZENDA 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/afazenda.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=afazenda3"
     },
     {
-      "id": "bbb-3",
-      "title": "BBB - 3",
-      "subtitle": "Quarto Magia",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "a-fazenda-4-3",
+      "title": "A FAZENDA 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/afazenda.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=afazenda4"
     },
     {
-      "id": "bbb-4",
-      "title": "BBB - 4",
-      "subtitle": "Área Externa",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "a-fazenda-5-4",
+      "title": "A FAZENDA 5",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/afazenda.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=afazenda5"
     },
     {
-      "id": "bbb-5",
-      "title": "BBB - 5",
-      "subtitle": "Academia",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2021/01/bbb-logo-big-brother-brasil-logo-0.png",
-      "category": "BBB 2026",
+      "id": "ae-5",
+      "title": "AE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/ae.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=ae"
     },
     {
-      "id": "globo",
-      "title": "Globo HD",
-      "subtitle": "TV Aberta",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2014/05/globo-logo-0.png",
-      "category": "TV Aberta",
+      "id": "amc-6",
+      "title": "AMC",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/amc.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=amc"
     },
     {
-      "id": "sbt",
-      "title": "SBT HD",
-      "subtitle": "TV Aberta",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2014/05/sbt-logo-0.png",
-      "category": "TV Aberta",
+      "id": "axn-7",
+      "title": "AXN",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/axn.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=axn"
     },
     {
-      "id": "espn",
-      "title": "ESPN Brasil",
-      "subtitle": "Esportes",
-      "thumbnail": "https://logodownload.org/wp-content/uploads/2014/05/espn-logo-0.png",
-      "category": "Esportes",
+      "id": "adult-swim-8",
+      "title": "ADULT SWIM",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/adultswim.png",
+      "category": "Todos",
       "isLive": true,
-      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "url": "https://sinalpublicoetv.vercel.app/?id=adultswim"
+    },
+    {
+      "id": "animal-planet-9",
+      "title": "ANIMAL PLANET",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/animalplanet.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=animalplanet"
+    },
+    {
+      "id": "aparecida-10",
+      "title": "APARECIDA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/aparecida.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=aparecida"
+    },
+    {
+      "id": "band-news-11",
+      "title": "BAND NEWS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/bandnews.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=bandnews"
+    },
+    {
+      "id": "band-rj-12",
+      "title": "BAND RJ",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/band.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=bandrj"
+    },
+    {
+      "id": "band-sp-13",
+      "title": "BAND SP",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/band.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=bandsp"
+    },
+    {
+      "id": "band-sports-14",
+      "title": "BAND SPORTS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/bandsports.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=bandsports"
+    },
+    {
+      "id": "cnn-brasil-15",
+      "title": "CNN BRASIL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cnnbrasil.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cnnbrasil"
+    },
+    {
+      "id": "can-o-nova-16",
+      "title": "CANÇÃO NOVA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cancaonova.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cancaonova"
+    },
+    {
+      "id": "cartoon-network-17",
+      "title": "CARTOON NETWORK",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cartoonnetwork.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cartoonnetwork"
+    },
+    {
+      "id": "gloob-18",
+      "title": "GLOOB",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/gloob.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=gloob"
+    },
+    {
+      "id": "cartoonito-19",
+      "title": "CARTOONITO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cartoonito.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cartoonito"
+    },
+    {
+      "id": "cazetv-1-20",
+      "title": "CAZETV 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cazetv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=caze1"
+    },
+    {
+      "id": "cazetv-2-21",
+      "title": "CAZETV 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cazetv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=caze2"
+    },
+    {
+      "id": "cazetv-3-22",
+      "title": "CAZETV 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cazetv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=caze3"
+    },
+    {
+      "id": "cinemax-23",
+      "title": "CINEMAX",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cinemax.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cinemax"
+    },
+    {
+      "id": "combate-24",
+      "title": "COMBATE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/combate.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=combate"
+    },
+    {
+      "id": "cultura-25",
+      "title": "CULTURA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/cultura.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=cultura"
+    },
+    {
+      "id": "discovery-channel-26",
+      "title": "DISCOVERY CHANNEL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoverychannel.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoverychannel"
+    },
+    {
+      "id": "discovery-h-h-27",
+      "title": "DISCOVERY H&H",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoveryhh.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoveryhh"
+    },
+    {
+      "id": "discovery-id-28",
+      "title": "DISCOVERY ID",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/investigacao-discovery.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoveryid"
+    },
+    {
+      "id": "discovery-kids-29",
+      "title": "DISCOVERY KIDS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoverykids.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoverykids"
+    },
+    {
+      "id": "discovery-science-30",
+      "title": "DISCOVERY SCIENCE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoveryscience.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoveryscience"
+    },
+    {
+      "id": "discovery-theater-31",
+      "title": "DISCOVERY THEATER",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/discovery-theater.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoverytheather"
+    },
+    {
+      "id": "discovery-turbo-32",
+      "title": "DISCOVERY TURBO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoveryturbo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoveryturbo"
+    },
+    {
+      "id": "discovery-world-33",
+      "title": "DISCOVERY WORLD",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/discoveryworld.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=discoveryworld"
+    },
+    {
+      "id": "disney-plus-1-34",
+      "title": "DISNEY PLUS 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/disneyplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=disneyplus1"
+    },
+    {
+      "id": "disney-plus-2-35",
+      "title": "DISNEY PLUS 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/disneyplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=disneyplus2"
+    },
+    {
+      "id": "disney-plus-3-36",
+      "title": "DISNEY PLUS 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/disneyplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=disneyplus3"
+    },
+    {
+      "id": "espn-37",
+      "title": "ESPN",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn"
+    },
+    {
+      "id": "espn-2-38",
+      "title": "ESPN 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn2.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn2"
+    },
+    {
+      "id": "espn-3-39",
+      "title": "ESPN 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn3.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn3"
+    },
+    {
+      "id": "espn-4-40",
+      "title": "ESPN 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn4.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn4"
+    },
+    {
+      "id": "espn-5-41",
+      "title": "ESPN 5",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn5.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn5"
+    },
+    {
+      "id": "espn-6-42",
+      "title": "ESPN 6",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/espn6.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=espn6"
+    },
+    {
+      "id": "food-network-43",
+      "title": "FOOD NETWORK",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/foodnetwork.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=foodnetwork"
+    },
+    {
+      "id": "gnt-44",
+      "title": "GNT",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/gnt.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=gnt"
+    },
+    {
+      "id": "globo-am-45",
+      "title": "GLOBO AM",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globoam"
+    },
+    {
+      "id": "globo-df-46",
+      "title": "GLOBO DF",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globodf"
+    },
+    {
+      "id": "globo-ce-47",
+      "title": "GLOBO CE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globoce"
+    },
+    {
+      "id": "globo-es-48",
+      "title": "GLOBO ES",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globoes"
+    },
+    {
+      "id": "globo-mg-49",
+      "title": "GLOBO MG",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globomg"
+    },
+    {
+      "id": "globo-go-50",
+      "title": "GLOBO GO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globogo"
+    },
+    {
+      "id": "globo-pb-51",
+      "title": "GLOBO PB",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globopb"
+    },
+    {
+      "id": "globo-pe-52",
+      "title": "GLOBO PE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globope"
+    },
+    {
+      "id": "globo-rj-53",
+      "title": "GLOBO RJ",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globorj"
+    },
+    {
+      "id": "globo-rs-54",
+      "title": "GLOBO RS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globors"
+    },
+    {
+      "id": "globo-sp-55",
+      "title": "GLOBO SP",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globosp"
+    },
+    {
+      "id": "globo-news-56",
+      "title": "GLOBO NEWS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/globonews.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globonews"
+    },
+    {
+      "id": "globo-novelas-57",
+      "title": "GLOBO NOVELAS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/globoplay-novelas.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=globonovelas"
+    },
+    {
+      "id": "hbo-58",
+      "title": "HBO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hbo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hbo"
+    },
+    {
+      "id": "hbo-2-59",
+      "title": "HBO 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hbo2.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hbo2"
+    },
+    {
+      "id": "hbo-family-60",
+      "title": "HBO FAMILY",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hbofamily.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hbofamily"
+    },
+    {
+      "id": "hbo-mundi-61",
+      "title": "HBO MUNDI",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hbomundi.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hbomundi"
+    },
+    {
+      "id": "hbo-pop-62",
+      "title": "HBO POP",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hbopop.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hbopop"
+    },
+    {
+      "id": "hbo-plus-63",
+      "title": "HBO PLUS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hboplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hboplus"
+    },
+    {
+      "id": "hbo-xtreme-64",
+      "title": "HBO XTREME",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hboxtreme.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hboxtreme"
+    },
+    {
+      "id": "hgtv-65",
+      "title": "HGTV",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/hgtv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=hgtv"
+    },
+    {
+      "id": "history-66",
+      "title": "HISTORY",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/history.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=history"
+    },
+    {
+      "id": "history-2-67",
+      "title": "HISTORY 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/history2.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=history2"
+    },
+    {
+      "id": "mtv-68",
+      "title": "MTV",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/mtv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=mtv"
+    },
+    {
+      "id": "master-chef-69",
+      "title": "MASTER CHEF",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://iconape.com/wp-content/files/mt/155285/png/masterchef-logo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=masterchef"
+    },
+    {
+      "id": "max-1-70",
+      "title": "MAX - 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/max.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=max1"
+    },
+    {
+      "id": "max-2-71",
+      "title": "MAX - 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/max.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=max2"
+    },
+    {
+      "id": "max-3-72",
+      "title": "MAX - 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/max.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=max3"
+    },
+    {
+      "id": "megapix-73",
+      "title": "MEGAPIX",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/megapix.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=megapix"
+    },
+    {
+      "id": "multishow-74",
+      "title": "MULTISHOW",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/multishow.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=multishow"
+    },
+    {
+      "id": "off-75",
+      "title": "OFF",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/off.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=off"
+    },
+    {
+      "id": "paramount-plus-76",
+      "title": "PARAMOUNT PLUS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/paramountplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=paramountplus"
+    },
+    {
+      "id": "paramount-plus-2-77",
+      "title": "PARAMOUNT PLUS 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/paramountplus.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=paramountplus2"
+    },
+    {
+      "id": "premiere-1-78",
+      "title": "PREMIERE 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere"
+    },
+    {
+      "id": "premiere-2-79",
+      "title": "PREMIERE 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-2.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere2"
+    },
+    {
+      "id": "premiere-3-80",
+      "title": "PREMIERE 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-3.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere3"
+    },
+    {
+      "id": "premiere-4-81",
+      "title": "PREMIERE 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-4.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere4"
+    },
+    {
+      "id": "premiere-5-82",
+      "title": "PREMIERE 5",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-5.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere5"
+    },
+    {
+      "id": "premiere-6-83",
+      "title": "PREMIERE 6",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-6.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere6"
+    },
+    {
+      "id": "premiere-7-84",
+      "title": "PREMIERE 7",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-7.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere7"
+    },
+    {
+      "id": "premiere-8-85",
+      "title": "PREMIERE 8",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/premiere-8.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=premiere8"
+    },
+    {
+      "id": "prime-video-86",
+      "title": "PRIME VIDEO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/primevideo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=primevideo"
+    },
+    {
+      "id": "prime-video-2-87",
+      "title": "PRIME VIDEO 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/primevideo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=primevideo2"
+    },
+    {
+      "id": "prime-video-3-88",
+      "title": "PRIME VIDEO 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/primevideo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=primevideo3"
+    },
+    {
+      "id": "prime-video-4-89",
+      "title": "PRIME VIDEO 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/primevideo.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=primevideo4"
+    },
+    {
+      "id": "record-mg-90",
+      "title": "RECORD MG",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/record-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=recordmg"
+    },
+    {
+      "id": "record-rj-91",
+      "title": "RECORD RJ",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/record-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=recordrj"
+    },
+    {
+      "id": "record-sp-92",
+      "title": "RECORD SP",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/record-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=recordsp"
+    },
+    {
+      "id": "record-go-93",
+      "title": "RECORD GO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/record-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=recordgo"
+    },
+    {
+      "id": "rede-vida-94",
+      "title": "REDE VIDA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/redevida.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=redevida"
+    },
+    {
+      "id": "sbt-rj-95",
+      "title": "SBT RJ",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sbt.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sbtrj"
+    },
+    {
+      "id": "sbt-sp-96",
+      "title": "SBT SP",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sbt.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sbtsp"
+    },
+    {
+      "id": "sony-channel-97",
+      "title": "SONY CHANNEL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sonychannel.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sonychannel"
+    },
+    {
+      "id": "space-98",
+      "title": "SPACE",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/space.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=space"
+    },
+    {
+      "id": "sportynet-99",
+      "title": "SPORTYNET",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sportynet.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportynet"
+    },
+    {
+      "id": "sportynet-1-100",
+      "title": "SPORTYNET+ 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sportynet.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportynetplus1"
+    },
+    {
+      "id": "sportynet-2-101",
+      "title": "SPORTYNET+ 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sportynet.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportynetplus2"
+    },
+    {
+      "id": "sportynet-3-102",
+      "title": "SPORTYNET+ 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/sportynet.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportynetplus3"
+    },
+    {
+      "id": "sportv-103",
+      "title": "SPORTV",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/sportv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportv"
+    },
+    {
+      "id": "sportv-2-104",
+      "title": "SPORTV 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/sportv-2.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportv2"
+    },
+    {
+      "id": "sportv-3-105",
+      "title": "SPORTV 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/sportv-3.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportv3"
+    },
+    {
+      "id": "sportv-4-106",
+      "title": "SPORTV 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/sportv-4.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sportv4"
+    },
+    {
+      "id": "star-channel-107",
+      "title": "STAR CHANNEL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/starchannel.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=starchannel"
+    },
+    {
+      "id": "studio-universal-108",
+      "title": "STUDIO UNIVERSAL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/studiouniversal.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=studiouniversal"
+    },
+    {
+      "id": "tcm-109",
+      "title": "TCM",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tcm.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tcm"
+    },
+    {
+      "id": "tlc-110",
+      "title": "TLC",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tlc.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tlc"
+    },
+    {
+      "id": "tnt-111",
+      "title": "TNT",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tnt.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tnt"
+    },
+    {
+      "id": "tnt-novelas-112",
+      "title": "TNT NOVELAS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tntnovelas.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tntnovelas"
+    },
+    {
+      "id": "tnt-series-113",
+      "title": "TNT SERIES",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tntseries.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tntseries"
+    },
+    {
+      "id": "tv-pai-eterno-114",
+      "title": "TV PAI ETERNO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/tvpaieterno.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=tvpaieterno"
+    },
+    {
+      "id": "telecine-action-115",
+      "title": "TELECINE ACTION",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecineaction.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecineaction"
+    },
+    {
+      "id": "telecine-cult-116",
+      "title": "TELECINE CULT",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecinecult.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecinecult"
+    },
+    {
+      "id": "telecine-fun-117",
+      "title": "TELECINE FUN",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecinefun.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecinefun"
+    },
+    {
+      "id": "telecine-pipoca-118",
+      "title": "TELECINE PIPOCA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecinepipoca.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecinepipoca"
+    },
+    {
+      "id": "telecine-premium-119",
+      "title": "TELECINE PREMIUM",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecinepremium.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecinepremium"
+    },
+    {
+      "id": "telecine-touch-120",
+      "title": "TELECINE TOUCH",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/telecinetouch.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=telecinetouch"
+    },
+    {
+      "id": "ufc-fight-pass-121",
+      "title": "UFC FIGHT PASS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/ufcfightpass.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=ufcfightpass"
+    },
+    {
+      "id": "universal-122",
+      "title": "UNIVERSAL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/universaltv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=universaltv"
+    },
+    {
+      "id": "warnerchannel-123",
+      "title": "WARNERCHANNEL",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/warnerchannel.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=warnerchannel"
+    },
+    {
+      "id": "xsports-124",
+      "title": "XSPORTS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/xsports.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=xsports"
+    },
+    {
+      "id": "pt-a-bola-125",
+      "title": "PT - A BOLA",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/pt_abola.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_abola"
+    },
+    {
+      "id": "pt-benfica-tv-126",
+      "title": "PT - BENFICA TV",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/play-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_benficatv"
+    },
+    {
+      "id": "pt-canal-11-127",
+      "title": "PT - CANAL 11",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/logo/play-tv.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_canal11"
+    },
+    {
+      "id": "pt-eleven-1-128",
+      "title": "PT - ELEVEN 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_Eleven_Sports_2020.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_eleven1"
+    },
+    {
+      "id": "pt-eleven-2-129",
+      "title": "PT - ELEVEN 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_Eleven_Sports_2020.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_eleven2"
+    },
+    {
+      "id": "pt-eleven-3-130",
+      "title": "PT - ELEVEN 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_Eleven_Sports_2020.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_eleven3"
+    },
+    {
+      "id": "pt-sporttv-1-131",
+      "title": "PT - SPORTTV 1",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv1"
+    },
+    {
+      "id": "pt-sporttv-2-132",
+      "title": "PT - SPORTTV 2",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv2"
+    },
+    {
+      "id": "pt-sporttv-3-133",
+      "title": "PT - SPORTTV 3",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv3"
+    },
+    {
+      "id": "pt-sporttv-4-134",
+      "title": "PT - SPORTTV 4",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv4"
+    },
+    {
+      "id": "pt-sporttv-5-135",
+      "title": "PT - SPORTTV 5",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv5"
+    },
+    {
+      "id": "pt-sporttv-6-136",
+      "title": "PT - SPORTTV 6",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv6"
+    },
+    {
+      "id": "pt-sporttv-7-137",
+      "title": "PT - SPORTTV 7",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Logo_SportTV.svg/960px-Logo_SportTV.svg.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=pt_sportv7"
+    },
+    {
+      "id": "24h-play-boy-138",
+      "title": "24H PLAY BOY",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=playboy"
+    },
+    {
+      "id": "24h-sexy-hot-139",
+      "title": "24H SEXY HOT",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=sexyhot"
+    },
+    {
+      "id": "24h-chaves-140",
+      "title": "24H CHAVES",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_chaves"
+    },
+    {
+      "id": "24h-dragon-ball-z-141",
+      "title": "24H DRAGON BALL Z",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_dragonball"
+    },
+    {
+      "id": "24h-friends-142",
+      "title": "24H FRIENDS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_friends"
+    },
+    {
+      "id": "24h-naruto-cl-ssico-143",
+      "title": "24H NARUTO CLÁSSICO",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_naruto"
+    },
+    {
+      "id": "24h-os-simpsons-144",
+      "title": "24H OS SIMPSONS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_simpsons"
+    },
+    {
+      "id": "24h-todo-mundo-odeia-o-cris-145",
+      "title": "24H TODO MUNDO ODEIA O CRIS",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_odeiachris"
+    },
+    {
+      "id": "24h-pica-pau-146",
+      "title": "24H PICA PAU",
+      "subtitle": "Ao vivo",
+      "thumbnail": "https://d1r94zrla0glo-cloudfront.vercel.app/sinalpublico/foto/embed/24h.png",
+      "category": "Todos",
+      "isLive": true,
+      "url": "https://sinalpublicoetv.vercel.app/?id=24h_picapau"
     }
   ]
 }
