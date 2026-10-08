@@ -19,6 +19,16 @@ function formatProgramTime(value?: string) {
   return new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(value))
 }
 
+function getChannelInitials(name?: string) {
+  return (name || "TV")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase()
+}
+
 export default function Home() {
   const channels = (channelsData as Channel[]).map((channel, index) => ({
     ...channel,
@@ -120,7 +130,7 @@ export default function Home() {
             <div className="channel-grid">
               {filteredChannels.map((channel) => (
                 <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)} aria-label={`Assistir ${channel.nome}`}>
-                  <span className="channel-logo"><span aria-hidden="true">TV</span>{channel.img && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.remove() }} />}</span>
+                  <span className="channel-logo"><span className="channel-logo-fallback" aria-hidden="true">{getChannelInitials(channel.nome)}</span>{channel.img && !channel.img.includes("d1r94zrla0glo-cloudfront.vercel.app") && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.style.display = "none" }} />}</span>
                   <strong>{channel.nome}</strong>
                 </button>
               ))}
