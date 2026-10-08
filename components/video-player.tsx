@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { ChevronDown, ChevronUp, Maximize, X } from "lucide-react"
+import { ChevronDown, ChevronUp, Maximize, RefreshCw, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Channel } from "@/types/channel"
 
@@ -32,6 +32,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
   const [programs, setPrograms] = useState<EpgItem[]>([])
   const [showEpg, setShowEpg] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [reloadToken, setReloadToken] = useState(0)
 
   useEffect(() => {
     setStreamIndex(0)
@@ -97,7 +98,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
 
       <div className="relative flex min-h-0 flex-1 items-center justify-center bg-black">
         {isLoading && <div className="absolute z-[1] text-sm text-white/60">Carregando canal...</div>}
-        <iframe key={streams[streamIndex]} src={streams[streamIndex]} title={`Player ao vivo: ${channel.nome}`} className="relative z-[2] h-full w-full border-0" loading="eager" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowFullScreen onLoad={() => setIsLoading(false)} />
+        <iframe key={`${streams[streamIndex]}-${reloadToken}`} src={streams[streamIndex]} title={`Player ao vivo: ${channel.nome}`} className="relative z-[2] h-full w-full border-0" loading="eager" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowFullScreen onLoad={() => setIsLoading(false)} />
 
         {showEpg && (current || next) && <section className="absolute bottom-5 left-5 z-10 w-[min(360px,calc(100%-80px))] rounded-xl border border-white/15 bg-black/80 p-3 text-white shadow-2xl backdrop-blur-md" aria-label="Programação do canal">
           <div className="mb-2 flex items-center justify-between"><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">Programação</span><button onClick={() => setShowEpg(false)} className="text-xs text-white/50 hover:text-white">Ocultar</button></div>
@@ -108,6 +109,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
         </section>}
 
         <div className="absolute right-4 top-1/2 z-10 flex -translate-y-1/2 flex-col gap-2 rounded-xl border border-white/10 bg-black/70 p-1 backdrop-blur-md player-controls">
+          <Button variant="ghost" size="icon" aria-label="Limpar cache e recarregar" title="Limpar cache e recarregar" onClick={() => { setIsLoading(true); setReloadToken((value) => value + 1) }} className="text-white hover:bg-white/15"><RefreshCw /></Button>
           <Button variant="ghost" size="icon" aria-label="Canal anterior" onClick={() => changeChannel(-1)} className="text-white hover:bg-white/15"><ChevronUp /></Button>
           <Button variant="ghost" size="icon" aria-label="Tela cheia" onClick={toggleFullscreen} className="text-white hover:bg-white/15"><Maximize /></Button>
           <Button variant="ghost" size="icon" aria-label="Próximo canal" onClick={() => changeChannel(1)} className="text-white hover:bg-white/15"><ChevronDown /></Button>

@@ -18,14 +18,13 @@ export function ChannelCard({ channel, onSelect }: ChannelCardProps) {
       <CardContent className="p-0">
         <div className="relative aspect-video bg-gradient-to-br from-muted/80 to-muted/40">
           <div className="flex h-full items-center justify-center p-4">
-            <img
+            {channel.img ? <img
               src={channel.img}
               alt={channel.nome}
               className="h-full max-h-12 w-auto object-contain opacity-90 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100"
-              onError={(e) => {
-                e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(channel.nome)}&background=1a1a2e&color=fff&size=128`
-              }}
-            />
+              onError={(event) => { event.currentTarget.style.display = "none" }}
+            /> : null}
+            <span className="logo-fallback" aria-hidden="true">{channel.nome.slice(0, 2).toUpperCase()}</span>
           </div>
           <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 transition-opacity group-hover:opacity-100">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
