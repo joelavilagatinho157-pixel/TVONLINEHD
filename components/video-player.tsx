@@ -55,7 +55,7 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
     }
 
     void loadEpg()
-    const hideTimer = window.setTimeout(() => setShowEpg(false), 5 * 60 * 1000)
+    const hideTimer = window.setTimeout(() => setShowEpg(false), 5 * 1000)
     return () => window.clearTimeout(hideTimer)
   }, [channel])
 
@@ -96,8 +96,10 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
 
         {showEpg && (current || next) && <section className="absolute bottom-5 left-5 z-10 w-[min(360px,calc(100%-80px))] rounded-xl border border-white/15 bg-black/80 p-3 text-white shadow-2xl backdrop-blur-md" aria-label="Programação do canal">
           <div className="mb-2 flex items-center justify-between"><span className="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">Programação</span><button onClick={() => setShowEpg(false)} className="text-xs text-white/50 hover:text-white">Ocultar</button></div>
-          {current && <div className="border-l-2 border-cyan-400 pl-3"><p className="text-[10px] uppercase text-white/45">Agora</p><p className="truncate text-sm font-semibold">{current.title || "Programação atual"}</p></div>}
-          {next && <div className="mt-2 border-l-2 border-white/25 pl-3"><p className="text-[10px] uppercase text-white/45">A seguir</p><p className="truncate text-sm text-white/80">{next.title || "Próximo programa"}</p></div>}
+          <div className="grid grid-cols-1 gap-2">
+            {current && <div className="border-l-2 border-cyan-400 pl-3"><p className="text-[10px] uppercase text-white/45">Agora</p><p className="truncate text-sm font-semibold">{current.title || "Programação atual"}</p></div>}
+            {next && <div className="border-l-2 border-white/25 pl-3"><p className="text-[10px] uppercase text-white/45">A seguir</p><p className="truncate text-sm text-white/80">{next.title || "Próximo programa"}</p></div>}
+          </div>
         </section>}
 
         <div className="absolute right-4 top-1/2 z-10 flex -translate-y-1/2 flex-col gap-2 rounded-xl border border-white/10 bg-black/70 p-1 backdrop-blur-md player-controls">
