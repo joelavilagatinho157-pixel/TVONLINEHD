@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
@@ -14,7 +14,30 @@ export default function Home() {
     img: channel.img || channel.image,
   }))
   const [selected, setSelected] = useState<Channel | null>(null)
+  const playerRef = useRef<HTMLDivElement>(null)
   const selectedIndex = selected ? channels.findIndex((channel) => channel.id === selected.id) : -1
+
+  useEffect(() => {
+    if (!selected) return
+    playerRef.current?.focus()
+
+    const handleRemoteKey = (event: KeyboardEvent) => {
+      if (["ArrowUp", "ChannelUp", "MediaTrackNext"].includes(event.key)) {
+        event.preventDefault()
+        const nextIndex = (selectedIndex - 1 + channels.length) % channels.length
+        setSelected(channels[nextIndex])
+      } else if (["ArrowDown", "ChannelDown", "MediaTrackPrevious"].includes(event.key)) {
+        event.preventDefault()
+        const nextIndex = (selectedIndex + 1) % channels.length
+        setSelected(channels[nextIndex])
+      } else if (event.key === "Escape") {
+        setSelected(null)
+      }
+    }
+
+    window.addEventListener("keydown", handleRemoteKey)
+    return () => window.removeEventListener("keydown", handleRemoteKey)
+  }, [selected])
 
   const changeChannel = (direction: -1 | 1) => {
     if (selectedIndex < 0 || channels.length < 2) return
@@ -51,7 +74,38 @@ export default function Home() {
         </section>
       </div>
       <footer>© TV Online HD - Este site não hospeda nenhum conteúdo de vídeo, apenas incorpora players de fontes públicas disponíveis na internet.</footer>
-      {selected && <div className="player-modal"><button className="player-back" onClick={() => setSelected(null)} aria-label="Voltar"><X size={22} /></button><div className="player-title"><span /> {selected.nome}</div><iframe key={selected.id} src={selected.url} title={`Player ${selected.nome}`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /><div className="player-controls" aria-label="Controles do player"><button onClick={() => changeChannel(-1)} aria-label="Canal anterior" title="Canal anterior"><ChevronUp size={18} /></button><button onClick={toggleFullscreen} aria-label="Tela cheia" title="Tela cheia"><Maximize2 size={17} /></button><button onClick={() => changeChannel(1)} aria-label="Próximo canal" title="Próximo canal"><ChevronDown size={18} /></button></div></div>}
+      {selected && (
+        <div
+          ref={playerRef}
+          className="player-modal"
+          role="dialog"
+          aria-label={`Player ${selected.nome}`}
+          tabIndex={-1}
+        >
+          <button className="player-back" onClick={() => setSelected(null)} aria-label="Voltar">
+            <X size={22} />
+          </button>
+          <div className="player-title"><span /> {selected.nome}</div>
+          <iframe
+            key={selected.id}
+            src={selected.url}
+            title={`Player ${selected.nome}`}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+          <div className="player-controls" aria-label="Controles do player">
+            <button onClick={() => changeChannel(-1)} aria-label="Canal anterior" title="Canal anterior">
+              <ChevronUp size={18} />
+            </button>
+            <button onClick={toggleFullscreen} aria-label="Tela cheia" title="Tela cheia">
+              <Maximize2 size={17} />
+            </button>
+            <button onClick={() => changeChannel(1)} aria-label="Próximo canal" title="Próximo canal">
+              <ChevronDown size={18} />
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
