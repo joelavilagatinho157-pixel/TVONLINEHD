@@ -39,6 +39,8 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
     setPrograms([])
     setShowEpg(true)
 
+    let hideTimer: number | undefined
+
     const loadEpg = async () => {
       try {
         const response = await fetch(EPG_URL, { cache: "no-store" })
@@ -46,17 +48,20 @@ export function VideoPlayer({ channel, channels = [], onClose, onChannelChange }
         const payload = (await response.json()) as EpgResponse
         const key = channel.nome.toLowerCase().replace(/[^a-z0-9]+/g, "")
         const data = Array.isArray(payload)
-          ? payload.find((item) => item.id.toLowerCase() === key)?.data
-          : Object.entries(payload).find(([id]) => id.toLowerCase() === key)?.[1]
+          ? payload.find((item) => item.id.toLowerCase().replace(/[^a-z0-9]+/g, "") === key)?.data
+          : Object.entries(payload).find(([id]) => id.toLowerCase().replace(/[^a-z0-9]+/g, "") === key)?.[1]
         setPrograms(data ?? [])
+        setShowEpg(Boolean(data?.length))
+        if (data?.length) hideTimer = window.setTimeout(() => setShowEpg(false), 5_000)
       } catch {
         setPrograms([])
       }
     }
 
     void loadEpg()
-    const hideTimer = window.setTimeout(() => setShowEpg(false), 5 * 1000)
-    return () => window.clearTimeout(hideTimer)
+    return () => {
+      if (hideTimer) window.clearTimeout(hideTimer)
+    }
   }, [channel])
 
   const now = Date.now()
