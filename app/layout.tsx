@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: 'https://images.vexels.com/media/users/3/128877/isolated/preview/b012e0730a5f9c0c4566d887bbed95d1-icone-de-tv-plana.png',
+        type: 'image/png',
+        sizes: '96x96',
+      },
+      {
         url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
       },
