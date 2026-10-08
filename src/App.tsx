@@ -1,124 +1,349 @@
-import { useEffect, useMemo, useState } from "react"
-import { ArrowLeft, ChevronDown, ChevronLeft, ChevronRight, Maximize, Play, Radio } from "lucide-react"
-import channelDatabase from "../db.json"
-
-type Channel = {
-  id: string
-  title: string
-  subtitle?: string
-  thumbnail?: string
-  category?: string
-  url: string
-}
-
-type Match = {
-  id: string
-  league?: string
-  time_start?: string
-  channel?: string
-  player?: string
-  players?: { name?: string }[]
-  teams?: { home?: { name?: string; image?: string }; away?: { name?: string; image?: string } }
-}
-
-const channels = (channelDatabase as { name: string; url: string; image?: string }[]).map((channel, index) => ({
-  id: `channel-${index}`,
-  title: channel.name,
-  thumbnail: channel.image,
-  url: channel.url,
-})) as Channel[]
-
-function formatTime(value?: string) {
-  if (!value) return "Ao Vivo"
-  const date = new Date(value)
-  return Number.isNaN(date.getTime()) ? "Ao Vivo" : `Hoje · ${date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}`
-}
+import { useState, useEffect, MouseEvent } from 'react';
+import Navbar from './components/Navbar';
+import CategoryBar from './components/CategoryBar';
+import ChannelCard from './components/ChannelCard';
+import VideoPlayer from './components/VideoPlayer';
+import AdminPanel from './components/AdminPanel';
+import AuthModal from './components/AuthModal';
+import ProfileModal from './components/ProfileModal';
+import { Channel, SiteConfig } from './constants';
+import { User } from './types';
+import { motion, AnimatePresence } from 'motion/react';
+import { LayoutGrid, Heart, Clock, Tv, Settings } from 'lucide-react';
 
 export default function App() {
-  const [selected, setSelected] = useState<Channel | null>(null)
-  const [matches, setMatches] = useState<Match[]>([])
-  const [loadingMatches, setLoadingMatches] = useState(true)
+  const [activeCategory, setActiveCategory] = useState("Todos");
+  const [channels, setChannels] = useState<Channel[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [siteConfig, setSiteConfig] = useState<SiteConfig>({ title: "TV Online HD", subtitle: "Os melhores canais ao vivo" });
+  const [selectedChannel, setSelectedChannel] = useState<Channel | null>(null);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [user, setUser] = useState<User | null>(null);
+  const [favorites, setFavorites] = useState<string[]>(() => {
+    const saved = localStorage.getItem('favorites');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [view, setView] = useState<'all' | 'favorites' | 'recent'>('all');
+  const [recentIds, setRecentIds] = useState<string[]>(() => {
+    const saved = localStorage.getItem('recent_channels');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
-    fetch("https://apisinalpublico.vercel.app/agenda.json")
-      .then((response) => response.json())
-      .then((data) => setMatches(Array.isArray(data) ? data : data.jogos ?? data.agenda ?? []))
-      .catch(() => setMatches([]))
-      .finally(() => setLoadingMatches(false))
-  }, [])
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
 
-  const agenda = useMemo(() => matches.map((match, index) => {
-    const home = match.teams?.home?.name ?? "Casa"
-    const away = match.teams?.away?.name ?? "Fora"
-    return {
-      ...match,
-      id: `match-${index}`,
-      home,
-      away,
-      channel: typeof match.channel === "string" ? match.channel : match.players?.[0]?.name ?? "ASSISTIR",
-      league: typeof match.league === "string" ? match.league : (match.league as { name?: string } | undefined)?.name ?? "Futebol ao vivo",
-      url: typeof match.player === "string" ? match.player : "",
+  const navigate = (path: string) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('/api/data');
+      const data = await response.json();
+      setChannels(data.channels || []);
+      // Add "Favoritos" and "Recentes" as virtual categories at the beginning and filter out duplicates
+      const cats = data.categories || ["Todos"];
+      setCategories([
+        "Todos", 
+        "Favoritos", 
+        "Recentes",
+        ...cats.filter((c: string) => c !== "Todos" && c !== "Favoritos" && c !== "Recentes")
+      ]);
+      setSiteConfig(data.siteConfig || { title: "TV Online HD", subtitle: "Os melhores canais ao vivo" });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
     }
-  }), [matches])
+  };
 
-  if (selected) {
+  const fetchProfile = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    try {
+      const response = await fetch('/api/profile', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (response.ok) {
+        const userData: User = await response.json();
+        setUser(userData);
+        setFavorites(userData.favorites);
+      } else {
+        localStorage.removeItem('token');
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+    fetchProfile();
+  }, []);
+
+  useEffect(() => {
+    if (!user) {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+  }, [favorites, user]);
+
+  useEffect(() => {
+    localStorage.setItem('recent_channels', JSON.stringify(recentIds));
+  }, [recentIds]);
+
+  const syncFavorites = async (newFavorites: string[]) => {
+    const token = localStorage.getItem('token');
+    if (!token || !user) return;
+
+    try {
+      await fetch('/api/profile', {
+        method: 'PUT',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ favorites: newFavorites }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const toggleFavorite = async (e: MouseEvent, channel: Channel) => {
+    e.stopPropagation();
+    const newFavorites = favorites.includes(channel.id) 
+      ? favorites.filter(id => id !== channel.id) 
+      : [...favorites, channel.id];
+    
+    setFavorites(newFavorites);
+    if (user) {
+      syncFavorites(newFavorites);
+    }
+  };
+
+  const handleAuthSuccess = (token: string, userData: User) => {
+    localStorage.setItem('token', token);
+    setUser(userData);
+    setFavorites(userData.favorites);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setUser(null);
+    setFavorites([]);
+    setIsProfileOpen(false);
+  };
+
+  const handleSaveAdmin = async (newData: any) => {
+    try {
+      const response = await fetch('/api/data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newData)
+      });
+      if (response.ok) {
+        setChannels(newData.channels);
+        setCategories(newData.categories);
+        setSiteConfig(newData.siteConfig);
+        setIsAdminOpen(false);
+      }
+    } catch (error) {
+      console.error("Error saving data:", error);
+      alert("Erro ao salvar dados");
+    }
+  };
+
+  const handleChannelClick = (channel: Channel) => {
+    setSelectedChannel(channel);
+    setRecentIds(prev => {
+      const filtered = prev.filter(id => id !== channel.id);
+      return [channel.id, ...filtered].slice(0, 20); // Keep last 20
+    });
+  };
+
+  const filteredChannels = channels.filter(c => {
+    const matchesCategory = activeCategory === "Todos" || 
+                            (activeCategory === "Favoritos" && favorites.includes(c.id)) ||
+                            (activeCategory === "Recentes" && recentIds.includes(c.id)) ||
+                            c.category === activeCategory;
+    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          c.subtitle.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesView = view === 'all' || 
+                        (view === 'favorites' && favorites.includes(c.id)) ||
+                        (view === 'recent' && recentIds.includes(c.id));
+    return matchesCategory && matchesSearch && matchesView;
+  });
+
+  if (currentPath === '/admin' || currentPath === '/login') {
+    return <AdminPanel />;
+  }
+
+  if (isLoading) {
     return (
-      <main className="player-screen">
-        <div className="player-video">
-          {selected.url ? <iframe src={selected.url} title={selected.title} allow="autoplay; fullscreen" allowFullScreen /> : <div className="player-empty"><Radio size={42} /><span>Player indisponível</span></div>}
-        </div>
-        <div className="player-header">
-          <button className="icon-button" onClick={() => setSelected(null)} aria-label="Voltar ao menu"><ArrowLeft size={21} /></button>
-          <div className="live-label"><span /> <strong>{selected.title}</strong></div>
-        </div>
-        <div className="player-controls">
-          <button className="icon-button" onClick={() => setSelected(channels[(channels.indexOf(selected) - 1 + channels.length) % channels.length])} aria-label="Canal anterior"><ChevronLeft /></button>
-          <button className="icon-button" onClick={() => document.documentElement.requestFullscreen?.()} aria-label="Tela cheia"><Maximize size={19} /></button>
-          <button className="icon-button" onClick={() => setSelected(channels[(channels.indexOf(selected) + 1) % channels.length])} aria-label="Próximo canal"><ChevronRight /></button>
-        </div>
-      </main>
-    )
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-red-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
   }
 
   return (
-    <main className="menu-screen">
-      <div className="menu-content">
-        <header className="brand-card">
-          <div className="brand-mark"><Radio size={22} /><span>TV ONLINE <b>HD</b></span></div>
-        </header>
+    <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-red-500/30">
+      <Navbar 
+        searchQuery={searchQuery} 
+        onSearchChange={setSearchQuery} 
+        user={user}
+        onUserClick={() => user ? setIsProfileOpen(true) : setIsAuthOpen(true)}
+        onSettingsClick={() => setIsSettingsOpen(true)}
+      />
+      
+      <main className="max-w-7xl mx-auto pb-20">
+        <div className="px-6 py-12 text-center">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4">
+            {siteConfig.title.split(' ')[0]} <span className="text-red-500">{siteConfig.title.split(' ').slice(1).join(' ')}</span>
+          </h1>
+          <p className="text-slate-400 font-medium max-w-xl mx-auto">
+            {siteConfig.subtitle}
+          </p>
+        </div>
 
-        <section className="agenda-section" aria-labelledby="agenda-title">
-          <h2 id="agenda-title">Jogos ao vivo</h2>
-          <div className="agenda-wrap">
-            <button className="slider-button left" onClick={() => document.getElementById("agenda")?.scrollBy({ left: -310, behavior: "smooth" })} aria-label="Jogos anteriores"><ChevronLeft /></button>
-            <div className="agenda" id="agenda">
-              {loadingMatches && <span className="muted">Carregando jogos...</span>}
-              {!loadingMatches && agenda.length === 0 && <span className="muted">Nenhum jogo na agenda no momento.</span>}
-              {agenda.map((match) => (
-                <button className="match-card" key={match.id} onClick={() => match.url && setSelected({ id: match.id, title: `${match.home} x ${match.away}`, url: match.url })}>
-                  <div className="match-top"><span>{match.league ?? "Futebol ao vivo"}</span><b>{formatTime(match.time_start)}</b></div>
-                  <div className="teams"><div><img src={match.teams?.home?.image} alt="" /><strong>{match.home}</strong></div><em>vs</em><div><img src={match.teams?.away?.image} alt="" /><strong>{match.away}</strong></div></div>
-                  <span className="watch"><Play size={13} fill="currentColor" /> {match.channel}</span>
-                </button>
-              ))}
+        <CategoryBar 
+          categories={categories}
+          activeCategory={activeCategory} 
+          onCategoryChange={setActiveCategory} 
+        />
+
+        <div className="px-6">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-6 bg-red-500 rounded-full" />
+              <h2 className="text-2xl font-bold tracking-tight">
+                {activeCategory === 'Favoritos' || view === 'favorites' 
+                  ? 'Meus Favoritos' 
+                  : activeCategory === 'Recentes' || view === 'recent'
+                  ? 'Canais Recentes'
+                  : activeCategory}
+              </h2>
+              <span className="text-slate-500 text-sm font-medium ml-2">
+                ({filteredChannels.length} {
+                  activeCategory === 'Favoritos' || view === 'favorites' 
+                    ? 'favoritos' 
+                    : activeCategory === 'Recentes' || view === 'recent'
+                    ? 'recentes'
+                    : 'canais'
+                })
+              </span>
             </div>
-            <button className="slider-button right" onClick={() => document.getElementById("agenda")?.scrollBy({ left: 310, behavior: "smooth" })} aria-label="Próximos jogos"><ChevronRight /></button>
-          </div>
-        </section>
 
-        <section aria-labelledby="channels-title">
-          <h2 id="channels-title">Canais disponíveis</h2>
-          <div className="channel-grid">
-            {channels.map((channel) => (
-              <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)}>
-                <span className="channel-logo">{channel.thumbnail ? <img src={channel.thumbnail} alt="" loading="lazy" /> : <b>{channel.title.slice(0, 2).toUpperCase()}</b>}</span>
-                <span>{channel.title}</span>
-              </button>
-            ))}
+            <button 
+              onClick={() => navigate('/admin')}
+              className="p-3 bg-white/5 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-all"
+              title="Administração"
+            >
+              <Settings className="w-5 h-5" />
+            </button>
           </div>
-        </section>
+
+          <motion.div 
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+          >
+            <AnimatePresence mode='popLayout'>
+              {filteredChannels.map((channel) => (
+                <motion.div
+                  key={channel.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChannelCard 
+                    channel={channel} 
+                    onClick={handleChannelClick}
+                    isFavorite={favorites.includes(channel.id)}
+                    onToggleFavorite={toggleFavorite}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {filteredChannels.length === 0 && (
+            <div className="flex flex-col items-center justify-center py-20 text-slate-500">
+              <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mb-4">
+                <Tv className="w-8 h-8 opacity-20" />
+              </div>
+              <p className="text-lg font-medium">Nenhum canal encontrado nesta categoria.</p>
+              <button 
+                onClick={() => setActiveCategory("Todos")}
+                className="mt-4 text-red-500 hover:underline"
+              >
+                Ver todos os canais
+              </button>
+            </div>
+          )}
+        </div>
+      </main>
+
+      {/* Footer / Mobile Nav Simulation */}
+      <div className="fixed bottom-0 inset-x-0 h-16 bg-slate-900/80 backdrop-blur-lg border-t border-white/5 flex items-center justify-around px-6 md:hidden z-50">
+        <button 
+          onClick={() => setView('all')}
+          className={`flex flex-col items-center gap-1 ${view === 'all' ? 'text-red-500' : 'text-slate-500'}`}
+        >
+          <LayoutGrid className="w-5 h-5" />
+          <span className="text-[10px] font-bold uppercase">Canais</span>
+        </button>
+        <button 
+          onClick={() => setView('favorites')}
+          className={`flex flex-col items-center gap-1 ${view === 'favorites' ? 'text-red-500' : 'text-slate-500'}`}
+        >
+          <Heart className={`w-5 h-5 ${view === 'favorites' ? 'fill-current' : ''}`} />
+          <span className="text-[10px] font-bold uppercase">Favoritos</span>
+        </button>
+        <button 
+          onClick={() => setView('recent')}
+          className={`flex flex-col items-center gap-1 ${view === 'recent' ? 'text-red-500' : 'text-slate-500'}`}
+        >
+          <Clock className="w-5 h-5" />
+          <span className="text-[10px] font-bold uppercase">Recentes</span>
+        </button>
       </div>
-      <footer>© TV Online HD — Este site não hospeda conteúdo de vídeo, apenas incorpora players de fontes públicas disponíveis na internet.</footer>
-    </main>
-  )
+
+      <VideoPlayer 
+        channel={selectedChannel} 
+        onClose={() => setSelectedChannel(null)} 
+        user={user}
+        onUpdateUser={setUser}
+      />
+
+      <AuthModal 
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+        onSuccess={handleAuthSuccess}
+      />
+
+      <ProfileModal 
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        user={user}
+        onUpdate={setUser}
+        onLogout={handleLogout}
+        channels={channels}
+      />
+    </div>
+  );
 }
