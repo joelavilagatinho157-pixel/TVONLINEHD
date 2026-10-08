@@ -1,0 +1,532 @@
+[
+  {
+    "id": 33,
+    "nome": "Sportv",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/sportv.png",
+    "url": "https://joel.embedtv.cv/sportv",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=sportv1",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 34,
+    "nome": "Sportv 2",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/sportv2.png",
+    "url": "https://joel.embedtv.cv/sportv2",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=sportv2",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 35,
+    "nome": "Sportv 3",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/sportv2.png",
+    "url": "https://joel.embedtv.cv/sportv3",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=sportv3",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 17,
+    "nome": "ESPN",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn.png",
+    "url": "https://joel.embedtv.cv/espn",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 18,
+    "nome": "ESPN 2",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn2.png",
+    "url": "https://joel.embedtv.cv/espn2",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn2",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 19,
+    "nome": "ESPN 3",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn3.png",
+    "url": "https://joel.embedtv.cv/espn3",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn3",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 20,
+    "nome": "ESPN 4",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn4.png",
+    "url": "https://joel.embedtv.cv/espn4",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn4",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 21,
+    "nome": "ESPN 5",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn5.png",
+    "url": "https://joel.embedtv.cv/espn5",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn5",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 22,
+    "nome": "ESPN 6",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/espn6.png",
+    "url": "https://joel.embedtv.cv/espn6",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=espn6",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 31,
+    "nome": "Prime Video",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/primevideo.png",
+    "url": "https://joel.embedtv.cv/primevideo",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 32,
+    "nome": "Prime Video 2",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/primevideo.png",
+    "url": "https://joel.embedtv.cv/primevideo2",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 23,
+    "nome": "Premiere",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere",
+    "stream2": "https://joel.embedtv.cv/premiere",
+    "stream3": "https://redecanais.ph/player3/ch.php?canal=premiere",
+    "stream4": ""
+  },
+  {
+    "id": 24,
+    "nome": "Premiere 2",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere2",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=premiere2",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 25,
+    "nome": "Premiere 3",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere3",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=premiere3",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 27,
+    "nome": "Premiere 5",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere5",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=premiere5",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 29,
+    "nome": "Premiere 7",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere7",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=premiere7",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 30,
+    "nome": "Premiere 8",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/premiere.png",
+    "url": "https://joel.embedtv.cv/premiere8",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=premiere8",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 15,
+    "nome": "CazeTV 1",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/cazetv.png",
+    "url": "https://joel.embedtv.cv/caze1",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 16,
+    "nome": "Combate",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/combate.png",
+    "url": "https://joel.embedtv.cv/combate",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=combate",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 6,
+    "nome": "Band Sports",
+    "categoria": "Esportes",
+    "img": "https://embedtv.cv/assets/images/bandsports.png",
+    "url": "https://joel.embedtv.cv/bandsports",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=bandsports",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 0,
+    "nome": "Globo RJ",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/globosp.png",
+    "url": "https://joel.embedtv.cv/globorj",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=boborj",
+    "stream3": "https://embed.bugoumods.com/player.php?type=live_streams&id=2552621&ext=ts&name=Globo%20Rio%20HD",
+    "stream4": ""
+  },
+  {
+    "id": 1,
+    "nome": "Globo SP",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/globosp.png",
+    "url": "https://joel.embedtv.cv/globosp",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=bobosp",
+    "stream3": "https://embed.bugoumods.com/player.php?type=live_streams&id=2227030&ext=ts&name=Globo%20SP%20HD",
+    "stream4": "https://embed.bugoumods.com/player.php?type=live_streams&id=2227031&ext=ts&name=Globo%20SP%20SD"
+  },
+  {
+    "id": 2,
+    "nome": "Globo RS",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/globosp.png",
+    "url": "https://joel.embedtv.cv/globors",
+    "stream2": "https://rdcanais.com/globors",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 3,
+    "nome": "Globo AM",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/globosp.png",
+    "url": "https://joel.embedtv.cv/globoam",
+    "stream2": "https://rdcanais.com/globoam",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 4,
+    "nome": "Band RJ",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/band.png",
+    "url": "https://joel.embedtv.cv/bandsp",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 9,
+    "nome": "Record SP",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/record.png",
+    "url": "https://joel.embedtv.cv/recordsp",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=recordnews",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 10,
+    "nome": "Record RJ",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/record.png",
+    "url": "https://joel.embedtv.cv/recordrj",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 11,
+    "nome": "Record MG",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/record.png",
+    "url": "https://joel.embedtv.cv/recordmg",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 12,
+    "nome": "SBT SP",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/sbt.png",
+    "url": "https://joel.embedtv.cv/sbt",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 13,
+    "nome": "SBT NEWS",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/sbt.png",
+    "url": "https://redecanais.ph/player3/ch.php?canal=sbtnews",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=sbtnews",
+    "stream3": "https://embed.bugoumods.com/player.php?type=live_streams&id=2553017&ext=ts&name=SBT%20News%20HD",
+    "stream4": ""
+  },
+  {
+    "id": 14,
+    "nome": "Viva",
+    "categoria": "TV Aberta",
+    "img": "https://embedtv.cv/assets/images/viva.png",
+    "url": "https://joel.embedtv.cv/viva",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=globoplaynovelas",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 5,
+    "nome": "Band News",
+    "categoria": "Noticias",
+    "img": "https://embedtv.cv/assets/images/bandnews.png",
+    "url": "https://joel.embedtv.cv/bandnews",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=bandnews",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 7,
+    "nome": "CNN Brasil",
+    "categoria": "Noticias",
+    "img": "https://embedtv.cv/assets/images/cnnbrasil.png",
+    "url": "https://joel.embedtv.cv/cnnbrasil",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=cnnbrasil",
+    "stream3": "https://embed.bugoumods.com/player.php?type=live_streams&id=2226581&ext=ts&name=CBN%20Brasil%20HD",
+    "stream4": "https://embed.bugoumods.com/player.php?type=live_streams&id=2226584&ext=ts&name=CNN%20Brasil%20FHD"
+  },
+  {
+    "id": 8,
+    "nome": "Globo News",
+    "categoria": "Noticias",
+    "img": "https://embedtv.cv/assets/images/globonews.png",
+    "url": "https://joel.embedtv.cv/globonews",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=globonews",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 38,
+    "nome": "Nick Junior",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/nickjr.png",
+    "url": "https://joel.embedtv.cv/nickjunior",
+    "stream2": "https://redecanaistv.be/player3/ch.php?canal=nickjr",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 39,
+    "nome": "Nickelodeon",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/nickelodeon.png",
+    "url": "https://joel.embedtv.cv/nickelodeon",
+    "stream2": "https://redecanaistv.be/player3/ch.php?canal=nick",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 40,
+    "nome": "Discovery Kids",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/discoverykids.png",
+    "url": "https://joel.embedtv.cv/discoverykids",
+    "stream2": "https://redecanaistv.be/player3/ch.php?canal=discoverykids",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 41,
+    "nome": "Cartoon Network",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/cartoonnetwork.png",
+    "url": "https://joel.embedtv.cv/cartoonnetwork",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 42,
+    "nome": "24H Os Simpsons",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/24h.png",
+    "url": "https://joel.embedtv.cv/24h_simpsons",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 44,
+    "nome": "24H Todo Mundo Odeia o Cris",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/24h.png",
+    "url": "https://joel.embedtv.cv/24h_odeiachris",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 45,
+    "nome": "24H Dragon Ball Z",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/24h.png",
+    "url": "https://joel.embedtv.cv/24h_dragonball",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 46,
+    "nome": "24H Naruto Classico",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/24h.png",
+    "url": "https://joel.embedtv.cv/24h_naruto",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 47,
+    "nome": "24H Chaves",
+    "categoria": "Infantil",
+    "img": "https://embedtv.cv/assets/images/24h.png",
+    "url": "https://joel.embedtv.cv/24h_chaves",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 48,
+    "nome": "Discovery Channel",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoverychannel.png",
+    "url": "https://joel.embedtv.cv/discoverychannel",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discovery",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 49,
+    "nome": "Discovery H&H",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoveryhh.png",
+    "url": "https://joel.embedtv.cv/discoveryhh",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discoveryhomeihealth",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 50,
+    "nome": "Discovery ID",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoverychannel.png",
+    "url": "https://joel.embedtv.cv/discoveryid",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 51,
+    "nome": "Discovery Science",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoveryscience.png",
+    "url": "https://joel.embedtv.cv/discoveryscience",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discoverysience",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 52,
+    "nome": "Discovery Theater",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoverytheater.png",
+    "url": "https://joel.embedtv.cv/discoverytheather",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discoverytheater",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 53,
+    "nome": "Discovery Turbo",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoveryturbo.png",
+    "url": "https://joel.embedtv.cv/discoveryturbo",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discoveryturbo",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 54,
+    "nome": "Discovery World",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/discoveryworld.png",
+    "url": "https://joel.embedtv.cv/discoveryword",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=discoveryworld",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 55,
+    "nome": "Fish TV",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/fishtv.png",
+    "url": "https://joel.embedtv.cv/fish",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 56,
+    "nome": "History",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/history.png",
+    "url": "https://joel.embedtv.cv/history",
+    "stream2": "https://redecanais.ph/player3/ch.php?canal=history",
+    "stream3": "",
+    "stream4": ""
+  },
+  {
+    "id": 57,
+    "nome": "History 2",
+    "categoria": "Documentarios",
+    "img": "https://embedtv.cv/assets/images/history.png",
+    "url": "https://joel.embedtv.cv/history2",
+    "stream2": "",
+    "stream3": "",
+    "stream4": ""
+  }
+]
