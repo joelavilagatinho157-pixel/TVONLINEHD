@@ -19,8 +19,10 @@ export function VideoPlayer({ channel, onClose }: VideoPlayerProps) {
   ].filter((s) => s && s.trim() !== "")
 
   const [currentStreamIndex, setCurrentStreamIndex] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleNextStream = () => {
+    setIsLoading(true) = () => {
     if (streams.length > 1) {
       setCurrentStreamIndex((prev) => (prev + 1) % streams.length)
     }
@@ -83,14 +85,21 @@ export function VideoPlayer({ channel, onClose }: VideoPlayerProps) {
       </div>
 
       {/* Player */}
-      <div className="flex flex-1 items-center justify-center bg-black">
+      <div className="relative flex flex-1 items-center justify-center bg-black">
+        {isLoading && (
+          <div className="absolute inset-0 z-[1] grid place-items-center bg-black text-sm text-white/60" aria-live="polite">
+            Carregando canal...
+          </div>
+        )}
         <iframe
           key={currentStream}
           src={currentStream}
-          className="h-full w-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          title={`Player ao vivo: ${channel.nome}`}
+          className="relative z-[2] h-full w-full border-0"
+          loading="eager"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
           allowFullScreen
-          referrerPolicy="no-referrer"
+          onLoad={() => setIsLoading(false)}
         />
       </div>
     </div>
