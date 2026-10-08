@@ -4,7 +4,20 @@ import { useEffect, useRef, useState } from "react"
 import { X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
-type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string }
+type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string; epg?: string; epg_url?: string }
+type EpgProgram = { title: string; desc?: string; start_date: string }
+type EpgChannel = { id: string; data: EpgProgram[] }
+
+function getEpgId(channel: Channel) {
+  const source = channel.epg || channel.epg_url || ""
+  const fromUrl = source.match(/[?&]id=([^&]+)/)?.[1]
+  return fromUrl || channel.nome?.toLowerCase().replace(/[^a-z0-9]+/g, "") || ""
+}
+
+function formatProgramTime(value?: string) {
+  if (!value) return "--:--"
+  return new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(value))
+}
 
 export default function Home() {
   const channels = (channelsData as Channel[]).map((channel, index) => ({
@@ -14,8 +27,33 @@ export default function Home() {
     img: channel.img || channel.image,
   }))
   const [selected, setSelected] = useState<Channel | null>(null)
+  const [epg, setEpg] = useState<EpgProgram[]>([])
   const playerRef = useRef<HTMLDivElement>(null)
   const selectedIndex = selected ? channels.findIndex((channel) => channel.id === selected.id) : -1
+
+  useEffect(() => {
+    if (!selected) {
+      setEpg([])
+      return
+    }
+
+    const controller = new AbortController()
+    const epgId = getEpgId(selected)
+
+    fetch("https://embedtv.lat/api/epg_all", { signal: controller.signal })
+      .then((response) => response.json() as Promise<EpgChannel[]>)
+      .then((items) => {
+        const match = items.find((item) => item.id.toLowerCase() === epgId.toLowerCase())
+        setEpg((match?.data || []).sort((a, b) => Date.parse(a.start_date) - Date.parse(b.start_date)))
+      })
+      .catch(() => setEpg([]))
+
+    return () => controller.abort()
+  }, [selected])
+
+  const now = Date.now()
+  const currentProgram = epg.filter((program) => Date.parse(program.start_date) <= now).at(-1)
+  const nextProgram = epg.find((program) => Date.parse(program.start_date) > now)
 
   useEffect(() => {
     if (!selected) return
@@ -101,6 +139,10 @@ export default function Home() {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
           />
+          <div className="player-epg" aria-live="polite">
+            <div><small>NO AR</small><strong>{currentProgram?.title || "Programação indisponível"}</strong><span>{currentProgram ? formatProgramTime(currentProgram.start_date) : ""}</span></div>
+            <div><small>A SEGUIR</small><strong>{nextProgram?.title || "Aguardando programação"}</strong><span>{nextProgram ? formatProgramTime(nextProgram.start_date) : ""}</span></div>
+          </div>
           <div className="player-controls" aria-label="Controles do player">
             <button onClick={() => changeChannel(-1)} aria-label="Canal anterior" title="Canal anterior">
               <ChevronUp size={18} />
