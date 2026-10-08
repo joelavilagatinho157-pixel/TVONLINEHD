@@ -1,30 +1,32 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import channelsData from "@/data/channels.json"
+import channelsData from "@/data/db.json"
 import type { Channel } from "@/types/channel"
 import { Header } from "@/components/header"
 import { CategorySidebar } from "@/components/category-sidebar"
 import { ChannelCard } from "@/components/channel-card"
 import { VideoPlayer } from "@/components/video-player"
 
-const CATEGORY_ORDER = ["TV Aberta", "Esportes", "Noticias", "Infantil", "Documentarios"]
-
 export default function Home() {
-  const channels = channelsData as Channel[]
-  
-  const categories = useMemo(() => {
-    const categoryMap = new Map<string, number>()
-    channels.forEach((channel) => {
-      const cat = channel.categoria
-      categoryMap.set(cat, (categoryMap.get(cat) || 0) + 1)
-    })
-    return CATEGORY_ORDER.filter((cat) => categoryMap.has(cat)).map((cat) => ({
-      id: cat,
-      name: cat,
-      count: categoryMap.get(cat) || 0,
-    }))
-  }, [channels])
+  const channels = useMemo<Channel[]>(
+    () =>
+      (channelsData as { name: string; url: string; image: string }[]).map(
+        (channel, index) => ({
+          id: index + 1,
+          nome: channel.name,
+          categoria: "Canais",
+          img: channel.image,
+          url: channel.url,
+        })
+      ),
+    []
+  )
+
+  const categories = useMemo(
+    () => [{ id: "Canais", name: "Canais", count: channels.length }],
+    [channels]
+  )
 
   const [activeCategory, setActiveCategory] = useState(categories[0]?.id || "")
   const [searchQuery, setSearchQuery] = useState("")
