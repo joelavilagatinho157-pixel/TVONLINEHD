@@ -109,7 +109,7 @@ export default function Home() {
 
         <section id="telaMenu" className="channels-section" aria-labelledby="channels-title">
           <div className="channels-heading">
-            <h2 id="channels-title">CANAIS DISPONÍVEIS <span className="channel-count">({filteredChannels.length})</span></h2>
+            <h2 id="channels-title">CANAIS DISPONÍVEIS</h2>
             <label className="search-box">
               <Search size={14} aria-hidden="true" />
               <span className="sr-only">Buscar canais</span>
