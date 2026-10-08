@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
-type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string; epg?: string; epg_url?: string }
+type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; logo?: string; url?: string; categoria?: string; epg?: string; epg_url?: string }
 type EpgProgram = { title: string; desc?: string; start_date: string }
 type EpgChannel = { id: string; data: EpgProgram[] }
 
@@ -19,12 +19,39 @@ function formatProgramTime(value?: string) {
   return new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(value))
 }
 
+function ChannelLogo({ channel }: { channel: Channel }) {
+  const [hasError, setHasError] = useState(false)
+  const imageRef = useRef<HTMLImageElement>(null)
+  const label = channel.nome || channel.name || "Canal"
+
+  useEffect(() => {
+    if (imageRef.current?.complete && imageRef.current.naturalWidth === 0) {
+      setHasError(true)
+    }
+  }, [channel.img])
+
+  return (
+    <span className="channel-logo">
+      {!hasError && channel.img ? (
+        <img
+          src={channel.img}
+          alt={`${label} logo`}
+          loading="lazy"
+          onError={() => setHasError(true)}
+        />
+      ) : (
+        <em aria-hidden="true">{label.slice(0, 3).toUpperCase()}</em>
+      )}
+    </span>
+  )
+}
+
 export default function Home() {
   const channels = (channelsData as Channel[]).map((channel, index) => ({
     ...channel,
     id: channel.id ?? index,
     nome: channel.nome || channel.name || "Canal",
-    img: channel.img || channel.image,
+    img: channel.img || channel.image || channel.logo,
   }))
   const [selected, setSelected] = useState<Channel | null>(null)
   const [epg, setEpg] = useState<EpgProgram[]>([])
@@ -112,7 +139,7 @@ export default function Home() {
           <div className="channel-grid">
             {channels.map((channel) => (
               <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)}>
-                <span className="channel-logo">{channel.img && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.style.display = "none" }} />}</span>
+                <ChannelLogo channel={channel} />
                 <strong>{channel.nome}</strong>
               </button>
             ))}
