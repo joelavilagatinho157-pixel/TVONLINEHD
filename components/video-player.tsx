@@ -31,7 +31,7 @@ export function VideoPlayer({ channel, onClose }: VideoPlayerProps) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-black">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/10 bg-black/80 px-4 py-3">
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between border-b border-white/10 bg-black/70 px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white/10">
             <img
