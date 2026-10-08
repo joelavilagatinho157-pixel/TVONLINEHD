@@ -1,7 +1,7 @@
 "use client"
 
-import { useMemo, useState } from "react"
-import { Search, X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
+import { useState } from "react"
+import { X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
 type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string }
@@ -13,7 +13,6 @@ export default function Home() {
     nome: channel.nome || channel.name || "Canal",
     img: channel.img || channel.image,
   }))
-  const [query, setQuery] = useState("")
   const [selected, setSelected] = useState<Channel | null>(null)
   const selectedIndex = selected ? channels.findIndex((channel) => channel.id === selected.id) : -1
 
@@ -30,10 +29,6 @@ export default function Home() {
       document.querySelector(".player-modal")?.requestFullscreen?.()
     }
   }
-  const filtered = useMemo(() => channels.filter((channel) =>
-    String(channel.nome).toLowerCase().includes(query.toLowerCase())
-  ), [channels, query])
-
   return (
     <main className="tv-page">
       <div className="tv-container">
@@ -44,16 +39,15 @@ export default function Home() {
         </header>
 
         <section id="canais" className="channels-section" aria-labelledby="channels-title">
-          <div className="channels-heading"><h2 id="channels-title">CANAIS DISPONÍVEIS</h2><label className="search-box"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar canal" aria-label="Buscar canal" /></label></div>
+          <div className="channels-heading"><h2 id="channels-title">CANAIS DISPONÍVEIS</h2></div>
           <div className="channel-grid">
-            {filtered.map((channel) => (
+            {channels.map((channel) => (
               <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)}>
                 <span className="channel-logo">{channel.img && <img src={channel.img} alt="" onError={(event) => { event.currentTarget.style.display = "none" }} />}<em>{channel.nome?.slice(0, 2).toUpperCase()}</em></span>
                 <strong>{channel.nome}</strong>
               </button>
             ))}
           </div>
-          {!filtered.length && <p className="empty">Nenhum canal encontrado.</p>}
         </section>
       </div>
       <footer>© TV Online HD - Este site não hospeda nenhum conteúdo de vídeo, apenas incorpora players de fontes públicas disponíveis na internet.</footer>
