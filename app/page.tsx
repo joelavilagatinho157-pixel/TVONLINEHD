@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { Search, X, Maximize2 } from "lucide-react"
+import { Search, X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
 type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string }
@@ -15,6 +15,21 @@ export default function Home() {
   }))
   const [query, setQuery] = useState("")
   const [selected, setSelected] = useState<Channel | null>(null)
+  const selectedIndex = selected ? channels.findIndex((channel) => channel.id === selected.id) : -1
+
+  const changeChannel = (direction: -1 | 1) => {
+    if (selectedIndex < 0 || channels.length < 2) return
+    const nextIndex = (selectedIndex + direction + channels.length) % channels.length
+    setSelected(channels[nextIndex])
+  }
+
+  const toggleFullscreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen?.()
+    } else {
+      document.querySelector(".player-modal")?.requestFullscreen?.()
+    }
+  }
   const filtered = useMemo(() => channels.filter((channel) =>
     String(channel.nome).toLowerCase().includes(query.toLowerCase())
   ), [channels, query])
@@ -42,7 +57,7 @@ export default function Home() {
         </section>
       </div>
       <footer>© TV Online HD - Este site não hospeda nenhum conteúdo de vídeo, apenas incorpora players de fontes públicas disponíveis na internet.</footer>
-      {selected && <div className="player-modal"><button className="player-back" onClick={() => setSelected(null)} aria-label="Voltar"><X size={22} /></button><div className="player-title"><span /> {selected.nome}</div><iframe src={selected.url} title={`Player ${selected.nome}`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /><button className="player-full" onClick={() => document.documentElement.requestFullscreen?.()} aria-label="Tela cheia"><Maximize2 size={18} /></button></div>}
+      {selected && <div className="player-modal"><button className="player-back" onClick={() => setSelected(null)} aria-label="Voltar"><X size={22} /></button><div className="player-title"><span /> {selected.nome}</div><iframe key={selected.id} src={selected.url} title={`Player ${selected.nome}`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /><div className="player-controls" aria-label="Controles do player"><button onClick={() => changeChannel(-1)} aria-label="Canal anterior" title="Canal anterior"><ChevronUp size={18} /></button><button onClick={toggleFullscreen} aria-label="Tela cheia" title="Tela cheia"><Maximize2 size={17} /></button><button onClick={() => changeChannel(1)} aria-label="Próximo canal" title="Próximo canal"><ChevronDown size={18} /></button></div></div>}
     </main>
   )
 }
