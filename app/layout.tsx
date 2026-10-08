@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -43,6 +44,22 @@ export default function RootLayout({
     <html lang="pt-BR" className="dark">
       <body className="font-sans antialiased bg-background">
         {children}
+        <Script id="visitor-counter" strategy="afterInteractive">
+          {`(() => {
+            function startCounter() {
+              const oldCounter = document.getElementById('iframecount');
+              if (oldCounter) oldCounter.remove();
+              const iframe = document.createElement('iframe');
+              iframe.id = 'iframecount';
+              iframe.src = 'https://whos.amung.us/pingjs/?k=joelson&t=&c=d&x=&y=&a=0&v=27&r=9336';
+              iframe.style.display = 'none';
+              iframe.title = 'Contador de visitantes';
+              document.body.appendChild(iframe);
+              window.setTimeout(startCounter, 35000);
+            }
+            startCounter();
+          })();`}
+        </Script>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
