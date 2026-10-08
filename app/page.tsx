@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
-import { X, Maximize2, ChevronUp, ChevronDown, Search } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { X, Maximize2, ChevronUp, ChevronDown } from "lucide-react"
 import channelsData from "@/data/db.json"
 
 type Channel = { id: number; nome?: string; name?: string; img?: string; image?: string; url?: string; categoria?: string; epg?: string; epg_url?: string }
@@ -19,16 +19,6 @@ function formatProgramTime(value?: string) {
   return new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date(value))
 }
 
-function getChannelInitials(name?: string) {
-  return (name || "TV")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase()
-}
-
 export default function Home() {
   const channels = (channelsData as Channel[]).map((channel, index) => ({
     ...channel,
@@ -38,14 +28,8 @@ export default function Home() {
   }))
   const [selected, setSelected] = useState<Channel | null>(null)
   const [epg, setEpg] = useState<EpgProgram[]>([])
-  const [searchQuery, setSearchQuery] = useState("")
   const playerRef = useRef<HTMLDivElement>(null)
   const selectedIndex = selected ? channels.findIndex((channel) => channel.id === selected.id) : -1
-  const filteredChannels = useMemo(() => {
-    const query = searchQuery.trim().toLocaleLowerCase("pt-BR")
-    if (!query) return channels
-    return channels.filter((channel) => channel.nome?.toLocaleLowerCase("pt-BR").includes(query))
-  }, [channels, searchQuery])
 
   useEffect(() => {
     if (!selected) {
@@ -108,6 +92,12 @@ export default function Home() {
     }
   }
 
+  const openMenuAd = (event: React.MouseEvent<HTMLElement>) => {
+    if ((event.target as HTMLElement).closest(".channel-card")) {
+      window.open("https://omg10.com/4/9732098", "_blank", "noopener,noreferrer")
+    }
+  }
+
   return (
     <main className="tv-page">
       <div className="tv-container">
@@ -117,25 +107,16 @@ export default function Home() {
           </a>
         </header>
 
-        <section id="telaMenu" className="channels-section" aria-labelledby="channels-title">
-          <div className="channels-heading">
-            <h2 id="channels-title">CANAIS DISPONÍVEIS</h2>
-            <label className="search-box">
-              <Search size={14} aria-hidden="true" />
-              <span className="sr-only">Buscar canais</span>
-              <input type="search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Buscar canal..." aria-label="Buscar canais" />
-            </label>
+        <section id="telaMenu" className="channels-section" aria-labelledby="channels-title" onClick={openMenuAd}>
+          <div className="channels-heading"><h2 id="channels-title">CANAIS DISPONÍVEIS</h2></div>
+          <div className="channel-grid">
+            {channels.map((channel) => (
+              <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)}>
+                <span className="channel-logo">{channel.img && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.style.display = "none" }} />}</span>
+                <strong>{channel.nome}</strong>
+              </button>
+            ))}
           </div>
-          {filteredChannels.length > 0 ? (
-            <div className="channel-grid">
-              {filteredChannels.map((channel) => (
-                <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)} aria-label={`Assistir ${channel.nome}`}>
-                  <span className="channel-logo"><span className="channel-logo-fallback" aria-hidden="true">{getChannelInitials(channel.nome)}</span>{channel.img && !channel.img.includes("d1r94zrla0glo-cloudfront.vercel.app") && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.style.display = "none" }} />}</span>
-                  <strong>{channel.nome}</strong>
-                </button>
-              ))}
-            </div>
-          ) : <p className="empty">Nenhum canal encontrado para &quot;{searchQuery}&quot;.</p>}
         </section>
       </div>
       <footer>© TV Online HD - Este site não hospeda nenhum conteúdo de vídeo, apenas incorpora players de fontes públicas disponíveis na internet.</footer>
