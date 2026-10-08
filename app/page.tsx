@@ -43,7 +43,7 @@ export default function Home() {
           <div className="channel-grid">
             {channels.map((channel) => (
               <button className="channel-card" key={channel.id} onClick={() => setSelected(channel)}>
-                <span className="channel-logo">{channel.img && <img src={channel.img} alt="" onError={(event) => { event.currentTarget.style.display = "none" }} />}<em>{channel.nome?.slice(0, 2).toUpperCase()}</em></span>
+                <span className="channel-logo">{channel.img && <img src={channel.img} alt={`${channel.nome} logo`} onError={(event) => { event.currentTarget.style.display = "none" }} />}</span>
                 <strong>{channel.nome}</strong>
               </button>
             ))}
