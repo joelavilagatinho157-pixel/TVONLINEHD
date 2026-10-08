@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'MegaTV - TV Online',
-  description: 'Assista canais de TV online ao vivo',
+  title: 'TV Online HD -Gazetv Futemax Canais filmes e Esportes Ao Vivo',
+  description: 'Assista TV ao vivo online grátis. Conteúdo completo com canais de futebol, filmes, séries e programação 24 horas em alta definição.',
   generator: 'v0.app',
   icons: {
     icon: [
