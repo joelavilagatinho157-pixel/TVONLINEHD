@@ -53,6 +53,13 @@ export default function Home() {
       document.querySelector(".player-modal")?.requestFullscreen?.()
     }
   }
+
+  const openMenuAd = (event: React.MouseEvent<HTMLElement>) => {
+    if ((event.target as HTMLElement).closest(".channel-card")) {
+      window.open("https://omg10.com/4/9732098", "_blank", "noopener,noreferrer")
+    }
+  }
+
   return (
     <main className="tv-page">
       <div className="tv-container">
@@ -62,7 +69,7 @@ export default function Home() {
           </a>
         </header>
 
-        <section id="canais" className="channels-section" aria-labelledby="channels-title">
+        <section id="telaMenu" className="channels-section" aria-labelledby="channels-title" onClick={openMenuAd}>
           <div className="channels-heading"><h2 id="channels-title">CANAIS DISPONÍVEIS</h2></div>
           <div className="channel-grid">
             {channels.map((channel) => (
